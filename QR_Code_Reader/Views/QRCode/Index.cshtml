@@ -45,8 +45,8 @@
                                     @Html.DisplayFor(modelItem => item.CovidCode)
                                 </td>
                                 <td>
-                                    <a asp-action="ShowUserInfo" asp-route-id="@item.Id" class="btn text-primary"><i class="fas fa-fw fa-pencil-alt"></i></a>
-                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn text-warning" onclick="return confirm('Are you sure you want to delete it')"><i class="fas fa-fw fa-trash"></i></a>
+                                    <a asp-action="ShowUserInfo" asp-route-id="@item.Id" class="btn text-primary"><img src="https://img.icons8.com/cotton/64/000000/qr-code--v1.png"  style=" width: 30px;"/></a>
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn text-danger" onclick="return confirm('Are you sure you want to delete it')"><i class="fas fa-fw fa-trash"></i></a>
                                 </td>
                             </tr>
                             }

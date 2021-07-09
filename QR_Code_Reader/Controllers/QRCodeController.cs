@@ -28,7 +28,7 @@ namespace QR_Code_Reader.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult Index()
         {
-            return View(_context.UserCovidTests.ToList());
+            return View(_context.UserCovidTests.OrderByDescending(x => x.Id).ToList());
         }
 
 
@@ -52,9 +52,8 @@ namespace QR_Code_Reader.Controllers
                 using (Bitmap bitmap = qRCode.GetGraphic(20))
                 {
                     bitmap.Save(ms, ImageFormat.Png);
-                    //ViewBag.QRCode = "data:image/png;base64," + Convert.ToBase64String(ms.ToArray());
+
                     ViewBag.QRCode = "data:image/png;base64," + Convert.ToBase64String(ms.ToArray());
-                    //var qrCode = TempData["qrInfo"];
 
 
                 }
@@ -63,7 +62,7 @@ namespace QR_Code_Reader.Controllers
                 _context.SaveChanges();
 
             }
-            return View();
+            return RedirectToAction(nameof(Index));
         }
         [HttpGet]
         public async Task<IActionResult> ShowUserInfo(int id)
@@ -80,9 +79,8 @@ namespace QR_Code_Reader.Controllers
                 using (Bitmap bitmap = qRCode.GetGraphic(20))
                 {
                     bitmap.Save(ms, ImageFormat.Png);
-                    //ViewBag.QRCode = "data:image/png;base64," + Convert.ToBase64String(ms.ToArray());
+
                     ViewBag.QRCode = "data:image/png;base64," + Convert.ToBase64String(ms.ToArray());
-                    //var qrCode = TempData["qrInfo"];
 
 
                 }

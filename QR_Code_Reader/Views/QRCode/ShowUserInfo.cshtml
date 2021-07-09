@@ -1,19 +1,47 @@
 ﻿@model QR_Code_Reader.Models.BLL.UserCovidTest
 @{
-    ViewData["Title"] = "ShowUserInfo";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
 }
 
-<h1>ShowUserInfo</h1>
+<!DOCTYPE html>
 
-<p>@Model.Name</p>
-<p>@Model.Surname</p>
-<p>@Model.BirthDay.Date.ToString("dd/MM/yyyy") </p>
-<p>@Model.CovidCode</p>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <section class="user-result-page">
+        <div class="container">
+            <div class="row">
+                <h1 style="text-align: center; font-weight: 700; margin-top: 40px; margin-bottom: 40px;">Azərbaycan Respublikası Səhiyyə Nazirliyi tərəfindən təsdiqlənmiş COVID-19 test cavabı</h1>
+                <div class="col-2"></div>
+                <div class="col-4" style="display:flex; margin-top: 50px;">
+                    <div style=" font-weight: 700; font-size: 21px;">
+                        <p>Adı:</p>
+                        <p>Soyadı:</p>
+                        <p>Doğum tarixi:  </p>
+                        <p>Covid test: </p>
+                    </div>
+                    <div style="margin-left: 40px; font-size: 21px;">
+                        <p> @Model.Name .</p>
+                        <p> @Model.Surname .</p>
+                        <p> @Model.BirthDay.Date.ToString("dd/MM/yyyy") . </p>
+                        <p> @Model.CovidCode .</p>
+                    </div>
 
-@if (ViewBag.QRCode != null)
-{
-    <img src="@ViewBag.QRCode" style="width:300px; height:300px;" alt="QR Code" />
-    @*<img src="@(TempData["qrInfo"])" style="width:300px; height:300px;" alt="QR Code" />*@
 
-}
+                </div>
+                <div class="col-4" style="margin-top: 38px;">
+                    @if (ViewBag.QRCode != null)
+                    {
+                        <img src="@ViewBag.QRCode" style="width:300px; height:300px;" alt="QR Code" />
+
+                    }
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
