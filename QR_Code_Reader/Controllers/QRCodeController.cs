@@ -16,6 +16,8 @@ using QRCoder;
 namespace QR_Code_Reader.Controllers
 {
     //[Authorize(Policy = "QrCodeonly")]
+    [Authorize(Roles = "Admin")]
+
     public class QRCodeController : Controller
     {
         private readonly MyContext _context;
@@ -23,11 +25,14 @@ namespace QR_Code_Reader.Controllers
         {
             _context = context;
         }
+        [Authorize(Roles = "Admin")]
         public IActionResult Index()
         {
             return View(_context.UserCovidTests.ToList());
         }
 
+
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return View();
@@ -60,7 +65,6 @@ namespace QR_Code_Reader.Controllers
             }
             return View();
         }
-
         [HttpGet]
         public async Task<IActionResult> ShowUserInfo(int id)
         {
