@@ -35,7 +35,8 @@ namespace QR_Code_Reader
                 options.UseSqlServer(_configuration["ConnectionStrings:Default"]);
             });
             services.AddIdentity<IdentityUser, IdentityRole>(options => options.Stores.MaxLengthForKeys = 128)
-                  .AddEntityFrameworkStores<MyContext>();
+                  .AddEntityFrameworkStores<MyContext>()
+                  .AddDefaultTokenProviders();
 
             services.AddControllersWithViews();
         }
