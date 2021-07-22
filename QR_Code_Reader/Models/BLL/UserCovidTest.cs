@@ -8,9 +8,17 @@ namespace QR_Code_Reader.Models.BLL
     public class UserCovidTest
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public DateTime BirthDay { get; set; }
-        public string CovidCode { get; set; }
+        public string NameSurname { get; set; }
+        public string FhaterName { get; set; }
+        public int Age { get; set; }
+        public string Sex { get; set; }
+        public string Department { get; set; }
+        public DateTime OnRequest { get; set; }
+        public DateTime TimeOfIssue { get; set; }
+        public DateTime AtTheTimeOfApproval { get; set; }
+        public string Doctor { get; set; }
+        public string Indicators { get; set; }
+        public string Result { get; set; }
+        public string Norm { get; set; }
     }
 }

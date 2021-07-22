@@ -10,8 +10,8 @@ using QR_Code_Reader.Models.DAL;
 namespace QR_Code_Reader.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20210711205211_initial")]
-    partial class initial
+    [Migration("20210721152448_initial_4")]
+    partial class initial_4
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -228,17 +228,41 @@ namespace QR_Code_Reader.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("BirthDay")
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("AtTheTimeOfApproval")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("CovidCode")
+                    b.Property<string>("Department")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Doctor")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Surname")
+                    b.Property<string>("FhaterName")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Indicators")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NameSurname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Norm")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("OnRequest")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Result")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Sex")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("TimeOfIssue")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 

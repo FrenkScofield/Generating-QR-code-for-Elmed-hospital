@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace QR_Code_Reader.Migrations
 {
-    public partial class initial : Migration
+    public partial class initial_4 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -52,10 +52,18 @@ namespace QR_Code_Reader.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(nullable: true),
-                    Surname = table.Column<string>(nullable: true),
-                    BirthDay = table.Column<DateTime>(nullable: false),
-                    CovidCode = table.Column<string>(nullable: true)
+                    NameSurname = table.Column<string>(nullable: true),
+                    FhaterName = table.Column<string>(nullable: true),
+                    Age = table.Column<int>(nullable: false),
+                    Sex = table.Column<string>(nullable: true),
+                    Department = table.Column<string>(nullable: true),
+                    OnRequest = table.Column<DateTime>(nullable: false),
+                    TimeOfIssue = table.Column<DateTime>(nullable: false),
+                    AtTheTimeOfApproval = table.Column<DateTime>(nullable: false),
+                    Doctor = table.Column<string>(nullable: true),
+                    Indicators = table.Column<string>(nullable: true),
+                    Result = table.Column<string>(nullable: true),
+                    Norm = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

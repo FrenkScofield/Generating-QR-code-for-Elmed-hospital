@@ -40,7 +40,20 @@ namespace QR_Code_Reader.Controllers
             using (MemoryStream ms = new MemoryStream())
             {
                 byte[] array = Encoding.ASCII.GetBytes(userCovidTest.ToString());
-                string qrInfo = $"Adi Soyadi - {userCovidTest.Name} {userCovidTest.Surname} ,Dogum tarixi - {userCovidTest.BirthDay.Date.ToString("dd/MM/yyyy")} ,Test cavabi - {userCovidTest.CovidCode}";
+
+                string qrInfo = $"Adı Soyadı - {userCovidTest.NameSurname}, " +
+                                $"Ata adı {userCovidTest.FhaterName} ," +
+                                $"İstək zamanı - {userCovidTest.OnRequest.Date.ToString("dd/MM/yyyy")} ," +
+                                $"Nəticənin çıxma vaxtı - {userCovidTest.TimeOfIssue.Date.ToString("dd/MM/yyyy")} ," +
+                                $"Təsdiq zamanı - {userCovidTest.AtTheTimeOfApproval.Date.ToString("dd/MM/yyyy")} ," +
+                                $"Həkim - {userCovidTest.Doctor} ," +
+                                $"Yaş - {userCovidTest.Age} ," +
+                                $"Cinsiyyet - {userCovidTest.Sex} ," +
+                                $"Şöbə - {userCovidTest.Department} ," +
+                                $"Göstəricilər - {userCovidTest.Indicators} ," +
+                                $"Nəticə - {userCovidTest.Result} ," +
+                                $"Norma - {userCovidTest.Norm}";
+
                 QRCodeGenerator qRCodeGenerator = new QRCodeGenerator();
                 QRCodeData qRCodeData = qRCodeGenerator.CreateQrCode(qrInfo, QRCodeGenerator.ECCLevel.Q);
                 QRCode qRCode = new QRCode(qRCodeData);
@@ -66,7 +79,18 @@ namespace QR_Code_Reader.Controllers
             var user = await _context.UserCovidTests.FindAsync(id);
             using (MemoryStream ms = new MemoryStream())
             {
-                string getQrInfo = $"Adi Soyadi - {user.Name} {user.Surname} ,Dogum tarixi - {user.BirthDay.Date.ToString("dd/MM/yyyy")} ,Test cavabi - {user.CovidCode}";
+                string getQrInfo = $"Adi Soyadi - {user.NameSurname} ," +
+                                   $"Ata adi -  {user.FhaterName} ," +
+                                   $"Yaş -  {user.Age} ," +
+                                   $"Cinsiyyet -  {user.Sex} ," +
+                                   $"Şöbə -  {user.Department} ," +
+                                   $"İstək zamanı - {user.OnRequest.Date.ToString("dd/MM/yyyy")} ," +
+                                   $"Nəticənin çıxma vaxtı - {user.TimeOfIssue.Date.ToString("dd/MM/yyyy")} ," +
+                                   $"Təsdiq zamanı - {user.AtTheTimeOfApproval.Date.ToString("dd/MM/yyyy")} ," +
+                                   $"Həkim - {user.Doctor} ," +
+                                   $" Göstəricilər - {user.Indicators} ," +
+                                   $" Nəticə - {user.Result} ," +
+                                   $" Norma - {user.Norm}";
 
                 QRCodeGenerator qRCodeGenerator = new QRCodeGenerator();
                 QRCodeData qRCodeData = qRCodeGenerator.CreateQrCode(getQrInfo, QRCodeGenerator.ECCLevel.Q);

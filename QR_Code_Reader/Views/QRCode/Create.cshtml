@@ -17,26 +17,72 @@
                     <div class="form-row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label asp-for="@Model.Name" class="control-label"></label>
-                                <input type="text" asp-for="@Model.Name" id="Name" class="form-control" />
-                                <span asp-validation-for="@Model.Name" class="text-danger"></span>
+                                <label asp-for="@Model.NameSurname" class="control-label">Adı Soyadı</label>
+                                <input type="text" asp-for="@Model.NameSurname" id="Name" class="form-control" />
+                                <span asp-validation-for="@Model.NameSurname" class="text-danger"></span>
                             </div>
                             <div class="form-group">
-                                <label asp-for="@Model.Surname" class="control-label"></label>
-                                <input asp-for="@Model.Surname" id="Name" class="form-control" />
-                                <span asp-validation-for="@Model.Surname" class="text-danger"></span>
+                                <label asp-for="@Model.FhaterName" class="control-label">Ata adı</label>
+                                <input type="text" asp-for="@Model.FhaterName" id="FhaterName" class="form-control" />
+                                <span asp-validation-for="@Model.FhaterName" class="text-danger"></span>
                             </div>
                             <div class="form-group">
-                                <label asp-for="@Model.BirthDay" class="control-label">Date of production</label>
-                                <input type="date" asp-for="@Model.BirthDay" id="datetimepicker" value="2021-04-08" class="form-control" />
-                                <span asp-validation-for="@Model.BirthDay" class="text-danger"></span>
+                                <label asp-for="@Model.Age" class="control-label">Yaş</label>
+                                <input type="number" asp-for="@Model.Age" id="Age" class="form-control" />
+                                <span asp-validation-for="@Model.Age" class="text-danger"></span>
                             </div>
                             <div class="form-group">
-                                <label asp-for="@Model.CovidCode" class="control-label"></label>
-                                <input type="text" asp-for="@Model.CovidCode" id="Name" class="form-control" />
-                                <span asp-validation-for="@Model.CovidCode" class="text-danger"></span>
+                                <label asp-for="@Model.Sex" class="control-label">Cinsiyyet</label>
+                                <input type="text" asp-for="@Model.Sex" id="Sex" class="form-control" />
+                                <span asp-validation-for="@Model.Sex" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="@Model.Department" class="control-label">Şöbə</label>
+                                <input asp-for="@Model.Department" id="Department" class="form-control" />
+                                <span asp-validation-for="@Model.Department" class="text-danger"></span>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="@Model.OnRequest" class="control-label">İstək zamanı</label>
+                                <input type="date" asp-for="@Model.OnRequest" id="OnRequest" value="2021-12-08" class="form-control" />
+                                <span asp-validation-for="@Model.OnRequest" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="@Model.TimeOfIssue" class="control-label">Təsdiq zamanı</label>
+                                <input type="date" asp-for="@Model.TimeOfIssue" id="TimeOfIssue" value="2021-12-08" class="form-control" />
+                                <span asp-validation-for="@Model.TimeOfIssue" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="@Model.AtTheTimeOfApproval" class="control-label">Nəticənin çıxma vaxtı</label>
+                                <input type="date" asp-for="@Model.AtTheTimeOfApproval" id="AtTheTimeOfApproval" value="2021-12-08" class="form-control" />
+                                <span asp-validation-for="@Model.AtTheTimeOfApproval" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="@Model.Doctor" class="control-label">Həkim</label>
+                                <input asp-for="@Model.Doctor" id="Doctor" class="form-control" />
+                                <span asp-validation-for="@Model.Doctor" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                        <div class="Covid-results" style=" border: 2px solid; padding: 20px; display: flex; width: 100%;  margin: 20px 0px;">
+                            <div class="form-group" style=" width: 33%; margin-right: 20px;">
+                                <label asp-for="@Model.Indicators" class="control-label">Göstəricilər</label>
+                                <input asp-for="@Model.Indicators" id="Indicators" class="form-control" />
+                                <span asp-validation-for="@Model.Indicators" class="text-danger"></span>
+                            </div>
+                            <div class="form-group"  style=" width: 33%; margin-right: 20px;">
+                                <label asp-for="@Model.Result" class="control-label">Nəticə</label>
+                                <input asp-for="@Model.Result" id="Indicators" class="form-control" />
+                                <span asp-validation-for="@Model.Result" class="text-danger"></span>
+                            </div>
+                            <div class="form-group"  style=" width: 33%; margin-right: 20px;">
+                                <label asp-for="@Model.Norm" class="control-label">Norma</label>
+                                <input asp-for="@Model.Norm" id="Indicators" class="form-control" />
+                                <span asp-validation-for="@Model.Norm" class="text-danger"></span>
+                            </div>
+                        </div>
+
 
                     </div>
                     <div class="form-group">

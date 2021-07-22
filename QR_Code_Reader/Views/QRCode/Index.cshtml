@@ -18,10 +18,11 @@
                     <table class="table table-bordered table-striped table-shorting" id="dataTable">
                         <thead>
                             <tr>
-                                <th>Ad</th>
-                                <th>Soyad</th>
-                                <th>Doğum tarixi</th>
-                                <th>COVID - 19 <br /> Test Kodu  </th>
+                                <th>Adı Soyadı</th>
+                                <th>Ata Adı</th>
+                                <th>Yaş</th>
+                                <th>Göstəricilər </th>
+                                <th>Nəticə </th>
                                 <th><span style="color:Highlight">Göstər</span> - <span style="color:red">Sil</span></th>
                             </tr>
                         </thead>
@@ -31,21 +32,24 @@
                             <tr data-id="@item.Id">
 
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Name)
+                                    @Html.DisplayFor(modelItem => item.NameSurname)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Surname)
-                                </td>
-
-                                <td>
-                                    @item.BirthDay.ToShortDateString()
+                                    @Html.DisplayFor(modelItem => item.FhaterName)
                                 </td>
 
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.CovidCode)
+                                    @Html.DisplayFor(modelItem => item.Age)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Indicators)
                                 </td>
                                 <td>
-                                    <a asp-action="ShowUserInfo" asp-route-id="@item.Id" class="btn text-primary"><img src="https://img.icons8.com/cotton/64/000000/qr-code--v1.png"  style=" width: 30px;"/></a>
+                                    @Html.DisplayFor(modelItem => item.Result)
+                                </td>
+                                <td>
+                                    <a asp-action="ShowUserInfo" asp-route-id="@item.Id" class="btn text-primary"><img src="https://img.icons8.com/cotton/64/000000/qr-code--v1.png" style=" width: 30px;" /></a>
                                     <a asp-action="Delete" asp-route-id="@item.Id" class="btn text-danger" onclick="return confirm('Are you sure you want to delete it')"><i class="fas fa-fw fa-trash"></i></a>
                                 </td>
                             </tr>
