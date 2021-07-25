@@ -35,7 +35,7 @@ namespace QR_Code_Reader.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(UserCovidTest userCovidTest)
+        public IActionResult Create(UserCovidTest userCovidTest, int genderId)
         {
             using (MemoryStream ms = new MemoryStream())
             {
@@ -66,7 +66,14 @@ namespace QR_Code_Reader.Controllers
 
 
                 }
-
+                if (Convert.ToInt32(userCovidTest.Sex) == (int)Enum.Gender.Kişi)
+                {
+                    userCovidTest.Sex = "Kişi";
+                }
+                else
+                {
+                    userCovidTest.Sex = "Qadın";
+                }
                 _context.UserCovidTests.Add(userCovidTest);
                 _context.SaveChanges();
 

@@ -33,7 +33,11 @@
                             </div>
                             <div class="form-group">
                                 <label asp-for="@Model.Sex" class="control-label">Cinsiyyet</label>
-                                <input type="text" asp-for="@Model.Sex" id="Sex" class="form-control" />
+                                @*<input type="text" asp-for="@Model.Sex" id="Sex" class="form-control" />*@
+                            <select id="gender" asp-for="@Model.Sex" class="form-control">
+                                <option value="1">Kişi</option>
+                                <option value="2">Qadın</option>
+                            </select>
                                 <span asp-validation-for="@Model.Sex" class="text-danger"></span>
                             </div>
                             <div class="form-group">
@@ -50,7 +54,7 @@
                             </div>
                             <div class="form-group">
                                 <label asp-for="@Model.TimeOfIssue" class="control-label">Təsdiq zamanı</label>
-                                <input type="date" asp-for="@Model.TimeOfIssue" id="TimeOfIssue" value="2021-12-08" class="form-control" />
+                                <input type="datetime-local" asp-for="@Model.TimeOfIssue" id="TimeOfIssue" value="2021-12-08" class="form-control" />
                                 <span asp-validation-for="@Model.TimeOfIssue" class="text-danger"></span>
                             </div>
                             <div class="form-group">
@@ -93,7 +97,6 @@
                 @if (ViewBag.QRCode != null)
                 {
                     <img src="@ViewBag.QRCode" style="width:300px; height:300px;" alt="QR Code" />
-              
                 }
 
             </div>
@@ -112,6 +115,9 @@
             format: 'dd-MM-yyyy'
 
         });
+
+      
+
     </script>
 
 }
