@@ -13,8 +13,8 @@ namespace QR_Code_Reader.Models.BLL
         public int Age { get; set; }
         public string Sex { get; set; }
         public string Department { get; set; }
-        public DateTime OnRequest { get; set; }
-        public DateTime TimeOfIssue { get; set; }
+        public string OnRequest { get; set; }
+        public string TimeOfIssue { get; set; }
         public DateTime AtTheTimeOfApproval { get; set; }
         public string Doctor { get; set; }
         public string Indicators { get; set; }

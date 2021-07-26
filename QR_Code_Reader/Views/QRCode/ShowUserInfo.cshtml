@@ -64,9 +64,9 @@
                 </div>
                 <div class="col-6" style="margin-top: 70px;">
                     <div style=" font-weight: 700; font-size: 21px;">
-                        <p>İstək zamanı  : <span style="font-weight: 400;">@Model.OnRequest .</span></p>
-                        <p>Nəticənin çıxma vaxtı  : <span style="font-weight: 400;">@Model.TimeOfIssue .</span></p>
-                        <p>Təsdiq zamanı  : <span style="font-weight: 400;">@Model.AtTheTimeOfApproval .</span>  </p>
+                        <p>İstək zamanı  : <span style="font-weight: 400;">@Model.OnRequest.Replace('-', '/')  .</span></p>
+                        <p>Nəticənin çıxma vaxtı  : <span style="font-weight: 400;">@Model.TimeOfIssue.Replace('-','/') .</span></p>
+                        <p>Təsdiq zamanı  : <span style="font-weight: 400;">@Model.AtTheTimeOfApproval.ToShortDateString() @Model.AtTheTimeOfApproval.Hour:@Model.AtTheTimeOfApproval.Minute .</span>  </p>
                         <p>Həkim  : <span style="font-weight: 400;">@Model.Doctor .</span></p>
                     </div>
                   

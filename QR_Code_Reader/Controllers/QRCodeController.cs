@@ -43,8 +43,8 @@ namespace QR_Code_Reader.Controllers
 
                 string qrInfo = $"Adı Soyadı - {userCovidTest.NameSurname}, " +
                                 $"Ata adı {userCovidTest.FhaterName} ," +
-                                $"İstək zamanı - {userCovidTest.OnRequest.Date.ToString("dd/MM/yyyy")} ," +
-                                $"Nəticənin çıxma vaxtı - {userCovidTest.TimeOfIssue.Date.ToString("dd/MM/yyyy")} ," +
+                                $"İstək zamanı - {userCovidTest.OnRequest} ," +
+                                $"Nəticənin çıxma vaxtı - {userCovidTest.TimeOfIssue} ," +
                                 $"Təsdiq zamanı - {userCovidTest.AtTheTimeOfApproval.Date.ToString("dd/MM/yyyy")} ," +
                                 $"Həkim - {userCovidTest.Doctor} ," +
                                 $"Yaş - {userCovidTest.Age} ," +
@@ -91,8 +91,8 @@ namespace QR_Code_Reader.Controllers
                                    $"Yaş -  {user.Age} ," +
                                    $"Cinsiyyet -  {user.Sex} ," +
                                    $"Şöbə -  {user.Department} ," +
-                                   $"İstək zamanı - {user.OnRequest.Date.ToString("dd/MM/yyyy")} ," +
-                                   $"Nəticənin çıxma vaxtı - {user.TimeOfIssue.Date.ToString("dd/MM/yyyy")} ," +
+                                   $"İstək zamanı - {user.OnRequest} ," +
+                                   $"Nəticənin çıxma vaxtı - {user.TimeOfIssue} ," +
                                    $"Təsdiq zamanı - {user.AtTheTimeOfApproval.Date.ToString("dd/MM/yyyy")} ," +
                                    $"Həkim - {user.Doctor} ," +
                                    $" Göstəricilər - {user.Indicators} ," +
