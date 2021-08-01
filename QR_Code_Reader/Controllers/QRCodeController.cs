@@ -124,6 +124,12 @@ namespace QR_Code_Reader.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-   
+
+
+        public IActionResult PatientSearch()
+        {
+            return View();
+        }
+
     }
 }

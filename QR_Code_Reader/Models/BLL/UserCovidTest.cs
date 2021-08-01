@@ -20,5 +20,6 @@ namespace QR_Code_Reader.Models.BLL
         public string Indicators { get; set; }
         public string Result { get; set; }
         public string Norm { get; set; }
+        public string IdCardNumber { get; set; }
     }
 }

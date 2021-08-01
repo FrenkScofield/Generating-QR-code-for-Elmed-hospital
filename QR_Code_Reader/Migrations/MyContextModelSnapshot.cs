@@ -241,6 +241,9 @@ namespace QR_Code_Reader.Migrations
                     b.Property<string>("FhaterName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("IdCardNumber")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Indicators")
                         .HasColumnType("nvarchar(max)");
 

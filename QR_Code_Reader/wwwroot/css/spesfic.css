@@ -39,7 +39,7 @@
     background-color: #d0e9ff;
     background-image: none;
 }
-    /*Checkbox inside Select Option end*/
+    Checkbox inside Select Option end
 #addDepart:hover {
     background-color: #64d15dab;
 }
@@ -77,4 +77,5 @@
 .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
     width: 60%;
 }
- 
+
+

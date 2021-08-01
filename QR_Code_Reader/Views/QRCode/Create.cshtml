@@ -34,16 +34,16 @@
                             <div class="form-group">
                                 <label asp-for="@Model.Sex" class="control-label">Cinsiyyet</label>
                                 @*<input type="text" asp-for="@Model.Sex" id="Sex" class="form-control" />*@
-                            <select id="gender" asp-for="@Model.Sex" class="form-control">
-                                <option value="1">Kişi</option>
-                                <option value="2">Qadın</option>
-                            </select>
+                                <select id="gender" asp-for="@Model.Sex" class="form-control">
+                                    <option value="1">Kişi</option>
+                                    <option value="2">Qadın</option>
+                                </select>
                                 <span asp-validation-for="@Model.Sex" class="text-danger"></span>
                             </div>
                             <div class="form-group">
-                                <label asp-for="@Model.Department" class="control-label">Şöbə</label>
-                                <input asp-for="@Model.Department" id="Department" class="form-control" />
-                                <span asp-validation-for="@Model.Department" class="text-danger"></span>
+                                <label asp-for="@Model.IdCardNumber" class="control-label">Şəxsiyyət vəsiqəsinin nömrəsi</label>
+                                <input asp-for="@Model.IdCardNumber" id="Department" class="form-control" />
+                                <span asp-validation-for="@Model.IdCardNumber" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -53,12 +53,12 @@
                                 <span asp-validation-for="@Model.OnRequest" class="text-danger"></span>
                             </div>
                             <div class="form-group">
-                                <label asp-for="@Model.TimeOfIssue" class="control-label">Təsdiq zamanı</label>
+                                <label asp-for="@Model.TimeOfIssue" class="control-label"> Nəticənin çıxma vaxtı</label>
                                 <input type="date" asp-for="@Model.TimeOfIssue" id="TimeOfIssue" value="2021-12-08" class="form-control" />
                                 <span asp-validation-for="@Model.TimeOfIssue" class="text-danger"></span>
                             </div>
                             <div class="form-group">
-                                <label asp-for="@Model.AtTheTimeOfApproval" class="control-label">Nəticənin çıxma vaxtı</label>
+                                <label asp-for="@Model.AtTheTimeOfApproval" class="control-label">Təsdiq zamanı</label>
                                 <input type="datetime-local" asp-for="@Model.AtTheTimeOfApproval" id="AtTheTimeOfApproval" value="2021-12-08" class="form-control" />
                                 <span asp-validation-for="@Model.AtTheTimeOfApproval" class="text-danger"></span>
                             </div>
@@ -66,6 +66,11 @@
                                 <label asp-for="@Model.Doctor" class="control-label">Həkim</label>
                                 <input asp-for="@Model.Doctor" id="Doctor" class="form-control" />
                                 <span asp-validation-for="@Model.Doctor" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="@Model.Department" class="control-label">Şöbə</label>
+                                <input asp-for="@Model.Department" id="Department" class="form-control" />
+                                <span asp-validation-for="@Model.Department" class="text-danger"></span>
                             </div>
 
                         </div>

@@ -10,8 +10,8 @@ using QR_Code_Reader.Models.DAL;
 namespace QR_Code_Reader.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20210726211755_changeDatetimeToString")]
-    partial class changeDatetimeToString
+    [Migration("20210801175844_initial_V9")]
+    partial class initial_V9
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -241,6 +241,9 @@ namespace QR_Code_Reader.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FhaterName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IdCardNumber")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Indicators")
