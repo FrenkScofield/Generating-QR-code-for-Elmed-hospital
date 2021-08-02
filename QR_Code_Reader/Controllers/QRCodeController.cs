@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using QR_Code_Reader.Models.BLL;
 using QR_Code_Reader.Models.DAL;
+using QR_Code_Reader.Models.VM;
 using QRCoder;
 
 namespace QR_Code_Reader.Controllers
@@ -129,6 +130,23 @@ namespace QR_Code_Reader.Controllers
         public IActionResult PatientSearch()
         {
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> PatientSearch(PatientSearchViewModel patientSearchViewModel)
+        {
+           
+            if (!ModelState.IsValid) return View(patientSearchViewModel);
+
+            var data = await _context.UserCovidTests.FindAsync(patientSearchViewModel);
+
+            if(data.IdCardNumber == patientSearchViewModel.IdCartNumber)
+            {
+                return RedirectToAction(nameof(ShowUserInfo));
+            }
+            return View();
+            
         }
 
     }
