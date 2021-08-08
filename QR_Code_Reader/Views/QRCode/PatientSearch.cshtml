@@ -5,103 +5,6 @@
 
 
 
-@*<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Login V16</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="icon" type="image/png" href="~/images/icons/favicon.ico" />
-
-    <link rel="stylesheet" type="text/css" href="~/vendor/bootstrap/css/bootstrap.min.css">
-
-    <link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-
-    <link rel="stylesheet" type="text/css" href="~/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-
-    <link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
-
-    <link rel="stylesheet" type="text/css" href="~/vendor/css-hamburgers/hamburgers.min.css">
-
-    <link rel="stylesheet" type="text/css" href="~/vendor/animsition/css/animsition.min.css">
-
-    <link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
-
-    <link rel="stylesheet" type="text/css" href="~/vendor/daterangepicker/daterangepicker.css">
-
-    <link rel="stylesheet" type="text/css" href="~/css/util.css">
-    <link rel="stylesheet" type="text/css" href="~/css/main.css">
-
-</head>
-
-<body>
-    <div class="limiter">
-        <div class="container-login100" style="background-image: url('/images/bg-01.jpg');">
-            <div class="wrap-login100 p-t-30 p-b-50">
-                <span class="login100-form-title p-b-41">
-                    Account Login
-                </span>
-                <form class="login100-form validate-form p-b-33 p-t-5" method="post">
-                    <div class="form-group">
-                        <label class="control-label">Adı </label>
-                        <input type="text" asp-for="Name" placeholder="Adı" class="name" required />
-                        <span class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label">Soyadı</label>
-                        <input type="text" asp-for="Surname" placeholder="Soyadı" class="name" required />
-                        <span class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label">Şəxsiyyət vəsiqəsinin nömrəsi</label>
-                        <input type="text" asp-for="IdCartNumber" placeholder="Şəxsiyyət vəsiqəsinin nömrəsi" class="name" required />
-                        <span class="text-danger"></span>
-                    </div>
-                    <div class="container-login100-form-btn m-t-32">
-                        <button type="submit" class="login100-form-btn">
-                            Login
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <div id="dropDownSelect1"></div>
-
-    <script src="~/admin/vendor/jquery/jquery-3.2.1.min.js"></script>
-
-    <script src="~/admin/vendor/animsition/js/animsition.min.js"></script>
-
-    <script src="~/admin/vendor/bootstrap/js/popper.js"></script>
-    <script src="~/admin/vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <script src="~/admin/vendor/select2/select2.min.js"></script>
-
-    <script src="~/admin/vendor/daterangepicker/moment.min.js"></script>
-    <script src="~/admin/vendor/daterangepicker/daterangepicker.js"></script>
-
-    <script src="~/admin/vendor/countdowntime/countdowntime.js"></script>
-
-    <script src="~/admin/js/main.js"></script>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-    <script>
-window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-23581568-13');</script>
-</body>
-
-</html>*@
-
-
-
 <!DOCTYPE html>
 
     <html>
@@ -110,174 +13,160 @@ window.dataLayer = window.dataLayer || [];
         <title>PatientSearch</title>
         <style>
 
-         /*   @@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);*/
-
-            body {
-               /* background: #2d3b36 url(http://www.luismruiz.com/img/blured.jpg)no-repeat center center fixed;*/
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;
-                padding-top: 100px;
-            }
-
-            form {
-                margin-left: auto;
-                margin-right: auto;
-                width: 343px;
-                height: 333px;
-                padding: 30px;
-                border: 1px solid rgba(0,0,0,.2);
-                -moz-border-radius: 5px;
-                -webkit-border-radius: 5px;
-                border-radius: 5px;
-                -moz-background-clip: padding;
-                -webkit-background-clip: padding-box;
-                background-clip: padding-box;
-                background: rgba(0, 0, 0, 0.5);
-                -moz-box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
-                -webkit-box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
-                box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
-                overflow: hidden;
-            }
-
-            textarea {
-               /* background: rgba(255, 255, 255, 0.4) url(http://luismruiz.com/img/gemicon_message.png) no-repeat scroll 16px 16px;*/
-                width: 276px;
-                height: 110px;
-                border: 1px solid rgba(255,255,255,.6);
-                -moz-border-radius: 4px;
-                -webkit-border-radius: 4px;
-                border-radius: 4px;
-                -moz-background-clip: padding;
-                -webkit-background-clip: padding-box;
-                background-clip: padding-box;
-                display: block;
-                font-family: 'Source Sans Pro', sans-serif;
-                font-size: 18px;
-                color: #fff;
-                padding-left: 45px;
-                padding-right: 20px;
-                padding-top: 12px;
-                margin-bottom: 20px;
-                overflow: hidden;
-            }
-
-            input {
-                width: 276px;
-                height: 48px;
-                border: 1px solid rgba(255,255,255,.4);
-                -moz-border-radius: 4px;
-                -webkit-border-radius: 4px;
-                border-radius: 4px;
-                -moz-background-clip: padding;
-                -webkit-background-clip: padding-box;
-                background-clip: padding-box;
-                display: block;
-                font-family: 'Source Sans Pro', sans-serif;
-                font-size: 18px;
-                color: #fff;
-                padding-left: 20px;
-                padding-right: 20px;
-                margin-bottom: 20px;
-            }
-
-                input[type=submit] {
-                    cursor: pointer;
-                }
-
-                input.name {
-                   /* background: rgba(255, 255, 255, 0.4) url(http://luismruiz.com/img/gemicon_name.png) no-repeat scroll 16px 16px;*/
-                    padding-left: 40px;
-                }
-
-                input.email {
-                    /*background: rgba(255, 255, 255, 0.4) url(http://luismruiz.com/img/gemicon_email.png) no-repeat scroll 16px 20px;*/
-                    padding-left: 40px;
-                }
-
-                input.message {
-                   /* background: rgba(255, 255, 255, 0.4) url(http://luismruiz.com/img/gemicon_message.png) no-repeat scroll 16px 16px;*/
-                    padding-left: 40px;
-                }
-
-            ::-webkit-input-placeholder {
-                color: #fff;
-            }
-
-            :-moz-placeholder {
-                color: #fff;
-            }
-
-            ::-moz-placeholder {
-                color: #fff;
-            }
-
-            :-ms-input-placeholder {
-                color: #fff;
-            }
-
-            input:focus, textarea:focus {
-                background-color: rgba(0, 0, 0, 0.2);
-                -moz-box-shadow: 0 0 5px 1px rgba(255,255,255,.5);
-                -webkit-box-shadow: 0 0 5px 1px rgba(255,255,255,.5);
-                box-shadow: 0 0 5px 1px rgba(255,255,255,.5);
-                overflow: hidden;
-            }
-
-
-            form .form-group label {
-                color: white;
-                font-size: 18px;
-                font-family: sans-serif;
-            }
-
-            form .form-group input {
-                margin-top: 10px;
-            }
-            section .col-12 {
-                text-align:center
-            }
             body {
                 background-image: url("https://userscontent2.emaze.com/images/4e9fc89f-19e7-41c3-a654-4d8e7d8a98ff/84bcb39a305bfdf2a655638d23dfcfb6.jpg");
+                background-size: cover;
+            }
+
+            .card {
+                width: 400px;
+                background-color: #fff;
+                border: none;
+                border-radius: 12px
+            }
+
+            label.radio {
+                cursor: pointer;
+                width: 100%
+            }
+
+                label.radio input {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    visibility: hidden;
+                    pointer-events: none
+                }
+
+                label.radio span {
+                    padding: 7px 14px;
+                    border: 2px solid #eee;
+                    display: inline-block;
+                    color: #039be5;
+                    border-radius: 10px;
+                    width: 100%;
+                    height: 48px;
+                    line-height: 27px
+                }
+
+                label.radio input:checked + span {
+                    border-color: #039BE5;
+                    background-color: #81D4FA;
+                    color: #fff;
+                    border-radius: 9px;
+                    height: 48px;
+                    line-height: 27px
+                }
+
+            .form-control {
+                margin-top: 10px;
+                height: 48px;
+                border: 2px solid #eee;
+                border-radius: 10px
+            }
+
+                .form-control:focus {
+                    box-shadow: none;
+                    border: 2px solid #039BE5
+                }
+
+            .agree-text {
+                font-size: 12px
+            }
+
+            .terms {
+                font-size: 12px;
+                text-decoration: none;
+                color: #039BE5
+            }
+
+            .confirm-button {
+                height: 50px;
+                border-radius: 10px
+            }
+
+            .confirm-button {
+                margin-top: 34px;
+            }
+
+            .control-label {
+                color: white;
+                font-size: 22px;
+                font-weight: 600;
+                font-family: monospace;
+                padding-top: 13px;
             }
         </style>
-        @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">*@
-
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+      
     </head>
     <body>
-        <section class="logo">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <img style="  margin-top: 20px; margin-bottom: 40px; width: 20%" src="~/img/images.png" alt="Elmed LOGO" />
+        @if ((string)ViewData["page"] == "true")
+        {
 
+            <section class="logo">
+                <div class="container">
+                    <div class="row">
+                        <div style=" text-align: center;" class="col-12">
+                            <img style="  margin-top: 60px; width: 20%" src="~/img/images.png" alt="Elmed LOGO" />
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="container mt-5 mb-5 d-flex justify-content-center">
+                <div style=" background-color: #434644ba;" class="card px-1">
+                    <div class="card-body">
+                        <form method="post">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Adı </label>
+                                        <input class="form-control" type="text" asp-for="Name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Soyadı</label>
+                                        <div class="input-group"> <input class="form-control" type="text" asp-for="Surname"> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Şəxsiyyət vəsiqəsinin nömrəsi</label>
+                                        <div class="input-group"> <input class="form-control" type="text" asp-for="IdCartNumber"> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block confirm-button">Yoxlayın</button>
+                        </form>
                     </div>
                 </div>
             </div>
-        </section>
-        <form>
-            <div class="form-group">
-                <label class="control-label">Adı </label>
-                <input type="text" asp-for="Name" placeholder="Adı" class="name" required />
-                <span class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label class="control-label">Soyadı</label>
-                <input type="text" asp-for="Surname" placeholder="Soyadı" class="name" required />
-                <span class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label class="control-label">Şəxsiyyət vəsiqəsinin nömrəsi</label>
-                <input type="text" asp-for="IdCartNumber" placeholder="Şəxsiyyət vəsiqəsinin nömrəsi" class="name" required />
-                <span class="text-danger"></span>
-            </div>
-            <input name="submit" class="btn" type="submit" value="Yoxlayın" />
-        </form>
+        }
+        else if ((string)ViewData["page"] == "false")
+        {
+            <p style=" text-align: center; font-size: 30px; font-family: cursive; font-weight: 400; color: red;">Sorgunuz qeyde alinmamisdir</p>
+            <p style=" font-size: 40px; font-family: sans-serif; font-weight: 700; color: red; text-align: center;">UGURSUZ CEHT</p>
+            @*<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content" style=" height: 250px;">
 
-
+                        <div class="modal-body">
+                            <p style=" text-align: center; font-size: 30px; font-family: cursive; font-weight: 400; color: red;">Sorgunuz qeyde alinmamisdir</p>
+                            <p style=" font-size: 40px; font-family: sans-serif; font-weight: 700; color: red; text-align: center;">UGURSUZ CEHT</p>
+                            <img style=" margin-left: 200px;" src="https://img.icons8.com/fluent/48/000000/cancel.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+        }
     </body>
     </html>
-
-
-
+          
+     

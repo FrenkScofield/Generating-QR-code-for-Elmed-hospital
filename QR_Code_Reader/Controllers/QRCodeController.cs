@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -87,21 +88,24 @@ namespace QR_Code_Reader.Controllers
             var user = await _context.UserCovidTests.FindAsync(id);
             using (MemoryStream ms = new MemoryStream())
             {
-                string getQrInfo = $"Adi Soyadi - {user.NameSurname} ," +
-                                   $"Ata adi -  {user.FhaterName} ," +
-                                   $"Yaş -  {user.Age} ," +
-                                   $"Cinsiyyet -  {user.Sex} ," +
-                                   $"Şöbə -  {user.Department} ," +
-                                   $"İstək zamanı - {user.OnRequest} ," +
-                                   $"Nəticənin çıxma vaxtı - {user.TimeOfIssue} ," +
-                                   $"Təsdiq zamanı - {user.AtTheTimeOfApproval.Date.ToString("dd/MM/yyyy")} ," +
-                                   $"Həkim - {user.Doctor} ," +
-                                   $" Göstəricilər - {user.Indicators} ," +
-                                   $" Nəticə - {user.Result} ," +
-                                   $" Norma - {user.Norm}";
+                //string getQrInfo = $"Adi Soyadi - {user.NameSurname} ," +
+                //                   $"Ata adi -  {user.FhaterName} ," +
+                //                   $"Yaş -  {user.Age} ," +
+                //                   $"Cinsiyyet -  {user.Sex} ," +
+                //                   $"Şöbə -  {user.Department} ," +
+                //                   $"İstək zamanı - {user.OnRequest} ," +
+                //                   $"Nəticənin çıxma vaxtı - {user.TimeOfIssue} ," +
+                //                   $"Təsdiq zamanı - {user.AtTheTimeOfApproval.Date.ToString("dd/MM/yyyy")} ," +
+                //                   $"Həkim - {user.Doctor} ," +
+                //                   $" Göstəricilər - {user.Indicators} ," +
+                //                   $" Nəticə - {user.Result} ," +
+                //                   $"Şəxsiyyət vəsiqəsinin nömrəsi  - {user.IdCardNumber} ," +
+                //                   $" Norma - {user.Norm}";
+
+                string link = "https://localhost:44313/QRCode/PatientSearch/id";
 
                 QRCodeGenerator qRCodeGenerator = new QRCodeGenerator();
-                QRCodeData qRCodeData = qRCodeGenerator.CreateQrCode(getQrInfo, QRCodeGenerator.ECCLevel.Q);
+                QRCodeData qRCodeData = qRCodeGenerator.CreateQrCode(link, QRCodeGenerator.ECCLevel.Q);
                 QRCode qRCode = new QRCode(qRCodeData);
 
                 using (Bitmap bitmap = qRCode.GetGraphic(20))
@@ -127,8 +131,17 @@ namespace QR_Code_Reader.Controllers
         }
 
 
-        public IActionResult PatientSearch()
+        public IActionResult PatientSearch(int id)
         {
+           
+            if (id != 0)
+            {
+                ViewData["page"] = "true";
+            }
+            else 
+            {
+                ViewData["page"] = "false";
+            }
             return View();
         }
 
@@ -139,14 +152,16 @@ namespace QR_Code_Reader.Controllers
            
             if (!ModelState.IsValid) return View(patientSearchViewModel);
 
-            var data = await _context.UserCovidTests.FindAsync(patientSearchViewModel);
+            var data = await _context.UserCovidTests.FirstOrDefaultAsync(t=>t.IdCardNumber == patientSearchViewModel.IdCartNumber);
 
-            if(data.IdCardNumber == patientSearchViewModel.IdCartNumber)
+            if (data != null)
             {
-                return RedirectToAction(nameof(ShowUserInfo));
+                return RedirectToAction(nameof(ShowUserInfo),new {id = data.Id });
             }
-            return View();
-            
+            else
+            {
+                return RedirectToAction(nameof(PatientSearch), new { id = 0 });
+            }
         }
 
     }
