@@ -10,8 +10,8 @@ using QR_Code_Reader.Models.DAL;
 namespace QR_Code_Reader.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20210801175844_initial_V9")]
-    partial class initial_V9
+    [Migration("20240508111234_first_V2")]
+    partial class first_V2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

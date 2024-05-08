@@ -11,8 +11,8 @@ using System.Threading.Tasks;
 
 namespace QR_Code_Reader.Controllers
 {
- 
-        public class AccountController : Controller
+
+    public class AccountController : Controller
         {
             private readonly MyContext _db;
             private readonly UserManager<IdentityUser> _userManager;
@@ -83,7 +83,7 @@ namespace QR_Code_Reader.Controllers
                         UserName = "admin",
                         Email = "admin@gmail.com",
                     };
-                    IdentityResult result = await _userManager.CreateAsync(admin, "admin123A@");
+                    IdentityResult result = await _userManager.CreateAsync(admin, "Admin123@@");
                     if (result.Succeeded)
                     {
                         _userManager.AddToRoleAsync(admin, "Admin").Wait();

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace QR_Code_Reader.Migrations
 {
-    public partial class initial_V9 : Migration
+    public partial class first_V2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
