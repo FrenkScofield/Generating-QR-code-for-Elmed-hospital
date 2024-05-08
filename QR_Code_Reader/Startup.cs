@@ -43,7 +43,7 @@ namespace QR_Code_Reader
 
 
 
-
+       
         //create admin role
         private async Task CreateRoles(IServiceProvider serviceProvider)
         {
