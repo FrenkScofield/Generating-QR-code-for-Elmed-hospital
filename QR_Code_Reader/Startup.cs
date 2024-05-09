@@ -41,8 +41,6 @@ namespace QR_Code_Reader
             services.AddControllersWithViews();
         }
 
-
-
        
         //create admin role
         private async Task CreateRoles(IServiceProvider serviceProvider)
