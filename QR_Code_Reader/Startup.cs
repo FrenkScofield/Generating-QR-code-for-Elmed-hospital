@@ -41,7 +41,9 @@ namespace QR_Code_Reader
             services.AddControllersWithViews();
         }
 
-       
+
+
+
         //create admin role
         private async Task CreateRoles(IServiceProvider serviceProvider)
         {
@@ -114,6 +116,11 @@ namespace QR_Code_Reader
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=QRCode}/{action=Index}/{id?}");
+
+
+                //endpoints.MapAreaControllerRoute(
+                //name: "areas", "WebCms",
+                //pattern: "{area:exists}/{controller=Account}/{action=Login}/{id?}");
 
             });
 
