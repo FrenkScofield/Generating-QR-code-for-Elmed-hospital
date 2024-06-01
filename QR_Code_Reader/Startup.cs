@@ -88,8 +88,6 @@ namespace QR_Code_Reader
             }
         }
 
-
-
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider serviceProvider)
         {
@@ -117,8 +115,8 @@ namespace QR_Code_Reader
                     name: "default",
                     pattern: "{controller=QRCode}/{action=Index}/{id?}");
 
-
-                //endpoints.MapAreaControllerRoute(
+                
+                //endpoints.MapAreaControllerRoute(1
                 //name: "areas", "WebCms",
                 //pattern: "{area:exists}/{controller=Account}/{action=Login}/{id?}");
 
